@@ -4,6 +4,7 @@ import static java.lang.Thread.sleep;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -20,6 +21,10 @@ import javax.swing.border.EmptyBorder;
 import model.cpuMODEL;
 import model.discoMODEL;
 import model.memoriaMODEL;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 public class Disco extends JFrame {
 
@@ -58,7 +63,7 @@ public class Disco extends JFrame {
 	static JLabel nomeDisco = new JLabel();
 	static JLabel tamanho = new JLabel();
 
-	public Disco() {
+	public Disco() throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1031, 600);
 		JPanel pnlFundo = new JPanel();
@@ -67,6 +72,25 @@ public class Disco extends JFrame {
 		this.setLocationRelativeTo(null);
 		setContentPane(pnlFundo);
 		pnlFundo.setLayout(null);
+                
+                
+                JPanel graficoPNL = new JPanel();
+		graficoPNL.setBounds(260, 60, 600, 430);
+		graficoPNL.setForeground(Color.black);
+
+		Dimension tamanhoArea = new Dimension(600, 430);
+		graficoPNL.setMinimumSize(tamanhoArea);
+		pnlFundo.add(graficoPNL, BorderLayout.CENTER);
+
+		DefaultPieDataset dpd = new DefaultPieDataset();
+		dpd.setValue("Disponivel", new Integer(memoriaMODEL.totalRAMM()));
+		dpd.setValue("Utilizada", new Integer(memoriaMODEL.ramUSADAA()));
+
+		JFreeChart grafico = ChartFactory.createPieChart(null, dpd, true, true, true);
+
+		ChartPanel chartPanel = new ChartPanel(grafico);
+		graficoPNL.add(chartPanel);
+		graficoPNL.validate();
 		
 		
 		//layout frufru
