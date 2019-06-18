@@ -11,11 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import static view.Principal.atualiza;
+import static view.Principal.table;
 
 public class Maquina extends JFrame {
 
 	private JPanel contentPane;
+        
+      
+        
 
 	
 	public static void main(String[] args) {
@@ -33,8 +39,12 @@ public class Maquina extends JFrame {
 		});
 	}
 
+        
 	
 	public Maquina() {
+            
+            
+            
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1031, 600);
@@ -133,13 +143,8 @@ public class Maquina extends JFrame {
 		btnFechar.addMouseListener((MouseListener)new MouseAdapter() {
 			
 			public void mouseClicked(MouseEvent e) {
-				Principal relat = null;
-				try {
-					relat = new Principal();
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				Maquina relat = null;
+                                relat = new Maquina(); // TODO Auto-generated catch block
 				relat.setUndecorated(true);
 				relat.setVisible(true);
 				dispose();

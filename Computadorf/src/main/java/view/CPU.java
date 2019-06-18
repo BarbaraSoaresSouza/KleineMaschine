@@ -183,19 +183,15 @@ public class CPU extends JFrame {
 		pnlFundo.add(label);
 
 		// janela de monitoramento transações
-		btnFechar.addMouseListener((MouseListener) new MouseAdapter() {
-
+		btnFechar.addMouseListener((MouseListener)new MouseAdapter() {
+			
 			public void mouseClicked(MouseEvent e) {
-				Principal relat = null;
-				try {
-					relat = new Principal();
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				Maquina relat = null;
+                                relat = new Maquina(); // TODO Auto-generated catch block
 				relat.setUndecorated(true);
 				relat.setVisible(true);
 				dispose();
+
 
 			}
 		});
