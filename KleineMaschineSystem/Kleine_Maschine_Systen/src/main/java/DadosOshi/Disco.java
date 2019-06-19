@@ -26,22 +26,28 @@ import oshi.software.os.OperatingSystem;
     }
 
    
-    public long DiscoDisponível() {
+    public float DiscoDisponível() {
         int numeroDeParticoes = NumeroDeParticoesDeDisco();
 
         long DiscoDisponivel = 0;
-
+        long discoDD = 0;
+        
         for (int i = 0; i < numeroDeParticoes; i++) {
+            
             DiscoDisponivel += operatingSystem.getFileSystem().getFileStores()[i].getUsableSpace();
+            
+            System.out.println(DiscoDisponivel);
+            
+            discoDD = ((DiscoDisponivel / 1024)/ 1024 )/1024 ;
+            
+            System.out.println(discoDD);
+            
+            
+            
 
         }
         
-        return DiscoDisponivel;
-    }
-    
-    @Override
-    public String toString() {
-        return "disco{" + "memoria utilizada = " + FormatUtil.formatBytes(DiscoDisponível()) + '}';
+        return discoDD;
     }
 
 }

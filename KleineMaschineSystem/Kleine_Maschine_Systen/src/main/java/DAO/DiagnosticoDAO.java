@@ -53,8 +53,8 @@ import java.sql.SQLException;
             
             stmtdi = con.prepareStatement(sql); 
             stmtdi.setDouble(1,cpu.capturaCpu()); // '1' significa a posição do simbolo '?' dentro do values.(Em qual coluna o dado será inserido.
-            stmtdi.setLong (2, memoria.capturaMemoria());
-            stmtdi.setLong(3, disc.DiscoDisponível());       
+            stmtdi.setFloat (2, memoria.capturaMemoria());
+            stmtdi.setLong(3, (long) disc.DiscoDisponível());       
             stmtdi.executeUpdate(); // salva o dado no banco
             
             System.out.println("DIAGNOSTICO SALVO COM SUCESSO!");

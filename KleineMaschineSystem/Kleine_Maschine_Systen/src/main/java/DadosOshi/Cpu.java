@@ -1,13 +1,7 @@
 
 package DadosOshi;
-
 import static java.lang.Thread.sleep;
 import java.text.DecimalFormat;
-
-
-
-
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oshi.PlatformEnum;
@@ -19,15 +13,20 @@ public class Cpu {
     public static double capturaCpu() {
 
         SystemInfo cpu = new SystemInfo();
-
+        double usocpU;
         double cpu1 = cpu.getHardware().getProcessor().getSystemCpuLoadBetweenTicks();
         double usoCpu = cpu1 * (400);
         DecimalFormat df = new DecimalFormat();
-        df.applyPattern("##,00%");
+        df.applyPattern("##,00");
+        String a = df.format(usoCpu);
 
         System.out.println("Você está utilizando " + df.format(usoCpu) + " de sua CPU");
-
-        return usoCpu;
+        usocpU = Double.parseDouble(a);
+        
+       
+        
+        return usocpU;
+        
         
         
        

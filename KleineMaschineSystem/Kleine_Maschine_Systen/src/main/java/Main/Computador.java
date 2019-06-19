@@ -10,28 +10,53 @@ import DadosOshi.Disco;
 import DadosOshi.DiscoTotal;
 import DadosOshi.Memoria;
 import DadosOshi.Processos;
+import Logs.Arquivo;
+import Logs.Diretorio;
 //------------------------------------------------------------------------------
 import Models.Diagnostico;
 import Models.Funcionario;
 import Models.Informacoes;
 import Models.SO;
+import java.io.FileNotFoundException;
 //------------------------------------------------------------------------------
 import java.sql.SQLException;
 import java.util.List;
 import oshi.PlatformEnum;
 import oshi.SystemInfo;
 import view.Login;
+import java.lang.NumberFormatException;
 
 public class Computador {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, FileNotFoundException {
 
         //Funcionario funcionario = new Funcionario();       
         //funcionario.setNomeFuncionario("João de Deus");              
         //funcionario.setCpfFuncionario("8745757854"); 
         //funcionario.setSenhaFuncionario("666999");
         //FuncionarioDAO fdao = new FuncionarioDAO();        
-        //fdao.save(funcionario);                            
+        //fdao.save(funcionario);       
+        
+        
+        //Variaveis
+       Diretorio log; //Variavel que guarda a instancia da classe Diretorio
+        
+       Arquivo txt; //Variavel que guarda a instancia da classe Arquivo
+        
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        //Inicializando a váriavel log criando a instancia  da classe Diretorio 
+        log = new Diretorio(); 
+        
+        //Chamando o metodo criarDiretorio da classe Diretorio
+        log.criarDiretorio();
+        
+        //Inicializando a váriavel txt criando a instancia da classe Arquivo 
+        txt = new Arquivo();
+        
+        //Chamando o metodo criarArquivo da classe Diretorio
+        txt.criarArquivo();
+        
        
           Processos procs1 = new Processos();
           List os = procs1.capturaProcesso();
@@ -40,12 +65,12 @@ public class Computador {
         //----------------------------------------------------------------------
         
         Cpu cpu = new Cpu();
-        double usoCpu = cpu.capturaCpu();
+        double usocpU = cpu.capturaCpu();
 
         //----------------------------------------------------------------------
         
         Memoria memoria = new Memoria();
-        long RAMusada = memoria.capturaMemoria();
+        float RAMuse = memoria.capturaMemoria();
 
         //----------------------------------------------------------------------
         Disco disc = new Disco();

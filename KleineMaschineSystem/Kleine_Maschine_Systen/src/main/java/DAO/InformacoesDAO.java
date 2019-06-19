@@ -45,7 +45,7 @@ public class InformacoesDAO {
             stmtinf.setFloat(3, totalR.capturaTotalRam());
             stmtinf.setLong(4, diskt.DiscoTotal());
             stmtinf.setString(5, processador.capturaNomeProcessador());
-             stmtinf.setLong(6, diskt.NumeroDeParticoesDeDisco());
+            stmtinf.setLong(6, diskt.NumeroDeParticoesDeDisco());
             // salva o dado no banco
             stmtinf.executeUpdate();
 
