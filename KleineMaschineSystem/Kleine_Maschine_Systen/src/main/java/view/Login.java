@@ -27,9 +27,7 @@ import java.awt.Font;
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-
-
-	
+        
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -98,20 +96,19 @@ public class Login extends JFrame {
 		
 			btnEntrar.addMouseListener((MouseListener) new MouseAdapter() {
 			 public void mouseClicked(MouseEvent arg0) {
-		        	 Principal index = null;
-					try {
-						index = new Principal();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}  
+		        	 Maquina maquina = null;
+                                 maquina = new Maquina(); // TODO Auto-generated catch block
 					if(txtEmail.getText().equals("admin@agile.com") && txtSenha.getText().equals("123456789")){
-						index.setVisible(true);  
+					maquina.setUndecorated(true);	
+                                            maquina.setVisible(true);  
 			             dispose();
 					}else {
 						JOptionPane.showMessageDialog(rootPane, "Email ou senha inválido, tente novamente", "Atenção !", JOptionPane.ERROR_MESSAGE, null);
 					}
+                               
 		        }
+                         
+                        
 		    });
 			
 		
