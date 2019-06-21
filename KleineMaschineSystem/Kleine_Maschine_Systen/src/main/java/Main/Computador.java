@@ -1,8 +1,8 @@
 package Main;
 
-import oshi.util.FormatUtil;
+
 import DAO.DiagnosticoDAO;
-import DAO.FuncionarioDAO;
+
 import DAO.InformacoesDAO;
 //------------------------------------------------------------------------------
 import DadosOshi.Cpu;
@@ -14,7 +14,7 @@ import Logs.Arquivo;
 import Logs.Diretorio;
 //------------------------------------------------------------------------------
 import Models.Diagnostico;
-import Models.Funcionario;
+
 import Models.Informacoes;
 import Models.SO;
 import java.io.FileNotFoundException;
@@ -24,7 +24,6 @@ import java.util.List;
 import oshi.PlatformEnum;
 import oshi.SystemInfo;
 import view.Login;
-import java.lang.NumberFormatException;
 
 public class Computador {
 

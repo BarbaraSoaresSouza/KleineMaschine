@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -231,7 +233,12 @@ public class Maquina extends JFrame {
 		btnDisco.addMouseListener((MouseListener)new MouseAdapter() {
 				
 				public void mouseClicked(MouseEvent e) {
-					Disco disc = new Disco();
+					Disco disc = null;
+                                    try {
+                                        disc = new Disco();
+                                    } catch (Exception ex) {
+                                        Logger.getLogger(Maquina.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
 					disc.setUndecorated(true);
 					disc.setVisible(true);
 					dispose();
