@@ -62,13 +62,12 @@ static slackModel slack = new slackModel();
 		DecimalFormat df = new DecimalFormat();
 		df.applyPattern("###,000%");
 
-		if (cpu1 >= 50000) {
+		if (cpu1 <= 50000) {
 			Component rootPane = null;
 			 JSONObject message = new JSONObject();
-		        message.put("text", "CPU ALCANÇANDO LIMITE DE UTILIZAÇÃO");
+		        message.put("text", "Esta tudo ok, com sua CPU..... USO DA CPU  "+ df.format(cpu1));
 		       slack.insertMessage(message);
-			JOptionPane.showMessageDialog(rootPane, "CPU ALCANÇANDO LIMITE DE UTILIZAÇÃO", "ALERTA",
-					JOptionPane.ERROR_MESSAGE, null);
+			
 
 		}
 		if (cpu1 >= 70000) {

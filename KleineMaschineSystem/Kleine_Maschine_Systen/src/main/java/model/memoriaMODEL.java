@@ -78,13 +78,12 @@ public class memoriaMODEL {
 		long RAMusada = sc.getHardware().getMemory().getAvailable();
 		int RAM = (int) ((RAMusada * 100) / totalRam);
 		
-		if (RAM >= 50000) {
+		if (RAM <= 50000) {
 			Component rootPane = null;
 			 JSONObject message = new JSONObject();
-		        message.put("text", "Memória alcançando limite de utilização");
+		        message.put("text", "Esta tudo ok com sua MEMORIA..... USO DA MEMORIA  "+ RAM+ " %");
 		      slack.insertMessage(message);
-			JOptionPane.showMessageDialog(rootPane, "Memória alcançando limite de utilização", "ALERTA",
-					JOptionPane.ERROR_MESSAGE, null);
+			
 
 		}
 		if (RAM >= 70000) {

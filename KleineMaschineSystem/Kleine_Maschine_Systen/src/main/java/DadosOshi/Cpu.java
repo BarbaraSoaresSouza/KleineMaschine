@@ -15,7 +15,7 @@ public class Cpu {
         SystemInfo cpu = new SystemInfo();
         double usocpU;
         double cpu1 = cpu.getHardware().getProcessor().getSystemCpuLoadBetweenTicks();
-        double usoCpu = cpu1 * (400);
+        double usoCpu = cpu1 * (100);
         DecimalFormat df = new DecimalFormat();
         df.applyPattern("##,00");
         String a = df.format(usoCpu);

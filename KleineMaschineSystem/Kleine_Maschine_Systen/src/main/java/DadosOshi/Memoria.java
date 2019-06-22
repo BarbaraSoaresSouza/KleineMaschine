@@ -8,21 +8,16 @@ public class Memoria {
 
     public float capturaMemoria() {
 
-        float RAMusada;
-        float tuaMae;
+     
         SystemInfo sc = new SystemInfo();
+       long totalRam = sc.getHardware().getMemory().getTotal();
+       long RAMusada = sc.getHardware().getMemory().getAvailable();
+       
+        
+        int estaMERDA = (int)((RAMusada *100)/totalRam);
+        
 
-        RAMusada = sc.getHardware().getMemory().getAvailable();
-        DecimalFormat df = new DecimalFormat("0.#");
-       // df.applyPattern("#,##");
-        
-        //String a = df.format(RAMusada);
-        
-        float estaMERDA = RAMusada / 1024 /1024 /1024;
-        
-        String estaPorra = df.format(estaMERDA);
-
-        System.out.println("Você está utilizando " + df.format(estaMERDA) + " de sua RAM");
+        System.out.println("Você está utilizando " + estaMERDA+ " de sua RAM");
         
         
        // RAMuse = Float.parseFloat(a);
@@ -32,13 +27,17 @@ public class Memoria {
     }
 
     public float capturaTotalRam() {
-        float totalRam;
 
         SystemInfo totalR = new SystemInfo();
 
-        totalRam = totalR.getHardware().getMemory().getTotal();
+       long totalRam = totalR.getHardware().getMemory().getTotal();
+        int  totalRAM = (int) ((totalRam *100)/totalRam);
+           DecimalFormat df = new DecimalFormat();
+        df.applyPattern("##,00");
+        String a = df.format(totalRAM);
+       float usoMem = Float.parseFloat(a);
 
-        return totalRam;
+        return usoMem;
 
     }
 }
