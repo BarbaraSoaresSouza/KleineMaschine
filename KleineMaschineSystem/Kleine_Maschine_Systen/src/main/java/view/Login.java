@@ -66,7 +66,7 @@ public class Login extends JFrame {
 		JLabel lblIMGFundo = new JLabel("New label");
 		lblIMGFundo.setFont(new Font("Cambria", Font.PLAIN, 11));
 		lblIMGFundo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIMGFundo.setIcon(new ImageIcon("img/loginIMG.PNG"));
+		lblIMGFundo.setIcon(new ImageIcon(getClass().getResource("/img/loginIMG.PNG")));
 		lblIMGFundo.setBounds(0, 0, 326, 339);
 		contentPane.add(lblIMGFundo);
 		

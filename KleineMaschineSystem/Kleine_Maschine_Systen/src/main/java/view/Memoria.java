@@ -136,8 +136,7 @@ public class Memoria extends JFrame {
 		btnCobrir.setBounds(10, 4, 60, 40);
 		pnlFundo.add(btnCobrir);
 		btnCobrir.setVisible(false);
-		btnCobrir.setIcon(new ImageIcon("img/002-list.png"));
-
+		btnCobrir.setIcon(new ImageIcon(getClass().getResource("/img/002-list.png")));
 		JLabel btnFechar = new JLabel("");
 		// set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA
 		// BAIXO,tamanho da imagem, tamanho da imagem
@@ -148,7 +147,7 @@ public class Memoria extends JFrame {
 		// set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA
 		// BAIXO,tamanho da imagem, tamanho da imagem
 		menu.setBounds(2, 49, 233, 560);
-		menu.setIcon(new ImageIcon("img/menuMaximizado.png"));
+		menu.setIcon(new ImageIcon(getClass().getResource("/img/menuMaximizado.png")));
 		menu.setVisible(false);
 		pnlFundo.add(menu);
 
@@ -179,7 +178,7 @@ public class Memoria extends JFrame {
 		menu.add(btnSair);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("img/fundo - Memoria.png"));
+		label.setIcon(new ImageIcon(getClass().getResource("/img/fundo - Memoria.png")));
 		label.setBounds(0, 0, 1031, 632);
 		pnlFundo.add(label);
 

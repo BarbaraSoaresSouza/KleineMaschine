@@ -93,8 +93,7 @@ public class Maquina extends JFrame {
 		btnCobrir.setBounds(10, 4, 60, 40);	
 		pnlFundo.add(btnCobrir);
 		btnCobrir.setVisible(false);
-		btnCobrir.setIcon(new ImageIcon("img/002-list.png"));
-	
+		btnCobrir.setIcon (new ImageIcon(getClass().getResource("/img/fundo - Disco.png")));
 		JLabel btnFechar = new JLabel("");
 		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
 		btnFechar.setBounds(965, 5, 40, 40);	
@@ -105,7 +104,8 @@ public class Maquina extends JFrame {
 		final JLabel menu = new JLabel("");
 		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
 		menu.setBounds(2, 49, 233, 560);	
-		menu.setIcon(new ImageIcon("img/menuMaximizado.png"));
+		menu.setIcon(new ImageIcon(getClass().getResource("/img/menuMaximizado.png")));
+                
 		menu.setVisible(false);
 		pnlFundo.add(menu);
 		
@@ -136,7 +136,7 @@ public class Maquina extends JFrame {
 		menu.add(btnSair);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("img/fundo - Maquina.png"));
+		label.setIcon(new ImageIcon(getClass().getResource("/img/fundo - Maquina.png")));
 		label.setBounds(0, 0, 1031, 632);
 		pnlFundo.add(label);
 				
