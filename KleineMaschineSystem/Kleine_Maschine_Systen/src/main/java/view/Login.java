@@ -57,7 +57,11 @@ public class Login extends JFrame {
 		//Jframe inicializando no meio (linha abaixo)
 		this.setLocationRelativeTo(null);
 		contentPane.setLayout(null);
-
+                
+                JLabel btnEntrar = new JLabel("");
+		btnEntrar.setBounds(198, 260, 85, 40);
+		contentPane.add(btnEntrar);
+	
 		JLabel btnSair = new JLabel("");
 		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
 		btnSair.setBounds(250, 5, 40, 40);	
@@ -70,9 +74,6 @@ public class Login extends JFrame {
 		lblIMGFundo.setBounds(0, 0, 326, 339);
 		contentPane.add(lblIMGFundo);
 		
-		JLabel btnEntrar = new JLabel("");
-		btnEntrar.setBounds(198, 260, 85, 40);
-		contentPane.add(btnEntrar);
 	
 		
 		
@@ -95,13 +96,11 @@ public class Login extends JFrame {
 		 
 		
 			btnEntrar.addMouseListener((MouseListener) new MouseAdapter() {
-			 public void mouseClicked(MouseEvent arg0) {
-		        	 Maquina maquina = null;
-                                 maquina = new Maquina(); // TODO Auto-generated catch block
+			 public void mouseClicked(MouseEvent e) {
+		        	 Maquina  maquina = new Maquina(); // TODO Auto-generated catch block
 					if(txtEmail.getText().equals("admin@agile.com") && txtSenha.getText().equals("123456789")){
 					maquina.setUndecorated(true);	
                                             maquina.setVisible(true);  
-			             dispose();
 					}else {
 						JOptionPane.showMessageDialog(rootPane, "Email ou senha inválido, tente novamente", "Atenção !", JOptionPane.ERROR_MESSAGE, null);
 					}

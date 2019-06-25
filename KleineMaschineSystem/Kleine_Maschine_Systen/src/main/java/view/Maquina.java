@@ -104,7 +104,7 @@ public class Maquina extends JFrame {
 		final JLabel menu = new JLabel("");
 		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
 		menu.setBounds(2, 49, 233, 560);	
-		menu.setIcon(new ImageIcon(getClass().getResource("/img/menuMaximizado.png")));
+		menu.setIcon(new ImageIcon(getClass().getResource("/img/MenuMaximizado.png")));
                 
 		menu.setVisible(false);
 		pnlFundo.add(menu);
