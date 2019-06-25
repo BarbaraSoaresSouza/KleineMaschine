@@ -86,26 +86,26 @@ public class Maquina extends JFrame {
 		esconder.setBounds(170,510,60, 80);
 		pnlFundo.add(esconder);
 		
-		
 		final JLabel btnCobrir = new JLabel("");
-		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
+		// set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA
+		// BAIXO,tamanho da imagem, tamanho da imagem
 
-		btnCobrir.setBounds(10, 4, 60, 40);	
+		btnCobrir.setBounds(10, 4, 60, 40);
 		pnlFundo.add(btnCobrir);
 		btnCobrir.setVisible(false);
-		btnCobrir.setIcon (new ImageIcon(getClass().getResource("/img/fundo - Disco.png")));
-		JLabel btnFechar = new JLabel("");
-		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
-		btnFechar.setBounds(965, 5, 40, 40);	
-		pnlFundo.add(btnFechar);
-		
-	
-		
-		final JLabel menu = new JLabel("");
-		//set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA BAIXO,tamanho da imagem, tamanho da imagem
-		menu.setBounds(2, 49, 233, 560);	
-		menu.setIcon(new ImageIcon(getClass().getResource("/img/MenuMaximizado.png")));
+		btnCobrir.setIcon(new ImageIcon(getClass().getResource("/img/002-list.png")));
                 
+		JLabel btnFechar = new JLabel("");
+		// set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA
+		// BAIXO,tamanho da imagem, tamanho da imagem
+		btnFechar.setBounds(965, 5, 40, 40);
+		pnlFundo.add(btnFechar);
+
+		final JLabel menu = new JLabel("");
+		// set bounds (DISTANCIA DA DIREITA PRA ESQUERDA, DISTANCIA DE CIMA PRA
+		// BAIXO,tamanho da imagem, tamanho da imagem
+		menu.setBounds(2, 49, 233, 560);
+		menu. setIcon(new ImageIcon(getClass().getResource("/img/MenuMaximizado.png")));
 		menu.setVisible(false);
 		pnlFundo.add(menu);
 		
@@ -131,7 +131,7 @@ public class Maquina extends JFrame {
 		
 		final JLabel btnSair = new JLabel("");
 		btnSair.setVisible(true);
-		btnSair.setBounds(1, 120, 225, 52);
+		btnSair.setBounds(2, 60, 225, 52);
 		//btnSair.setBounds(1, 235, 225, 52);
 		menu.add(btnSair);
 		
@@ -145,8 +145,8 @@ public class Maquina extends JFrame {
 		btnFechar.addMouseListener((MouseListener)new MouseAdapter() {
 			
 			public void mouseClicked(MouseEvent e) {
-				Maquina relat = null;
-                                relat = new Maquina(); // TODO Auto-generated catch block
+				Login relat = null;
+                                relat = new Login(); // TODO Auto-generated catch block
 				relat.setUndecorated(true);
 				relat.setVisible(true);
 				dispose();
@@ -182,16 +182,16 @@ public class Maquina extends JFrame {
 						
 					}
 				});
-				btnMonitoramentoTransacoes.addMouseListener((MouseListener)new MouseAdapter() {
+				//btnMonitoramentoTransacoes.addMouseListener((MouseListener)new MouseAdapter() {
 					
-					public void mouseClicked(MouseEvent e) {
-						Transacoes trans = new Transacoes();
-						trans.setUndecorated(true);
-						trans.setVisible(true);
-						dispose();
+				//	public void mouseClicked(MouseEvent e) {
+				//		Transacoes trans = new Transacoes();
+				//		trans.setUndecorated(true);
+				//		trans.setVisible(true);
+				//		dispose();
 						
-					}
-				});
+				//	}
+			//	});
 				//btnRelatorio.addMouseListener((MouseListener)new MouseAdapter() {
 				
 				//public void mouseClicked(MouseEvent e) {
@@ -273,7 +273,13 @@ public class Maquina extends JFrame {
 							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
 							options, options[0]);
 					if (i == JOptionPane.YES_OPTION) {
-						System.exit(0);
+                                            Login relat = null;
+                                relat = new Login(); // TODO Auto-generated catch block
+				relat.setUndecorated(true);
+				relat.setVisible(true);
+				dispose();
+
+						
 					}
 					
 	

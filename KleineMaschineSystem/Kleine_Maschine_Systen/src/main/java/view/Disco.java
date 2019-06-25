@@ -169,7 +169,7 @@ public class Disco extends JFrame {
 		
 		final JLabel btnSair = new JLabel("");
 		btnSair.setVisible(true);
-		btnSair.setBounds(1, 120, 225, 52);
+		btnSair.setBounds(2, 60, 225, 52);
 		//btnSair.setBounds(1, 235, 225, 52);
 		menu.add(btnSair);
 		
@@ -218,16 +218,16 @@ btnFechar.addMouseListener((MouseListener)new MouseAdapter() {
 						
 					}
 				});
-				btnMonitoramentoTransacoes.addMouseListener((MouseListener)new MouseAdapter() {
+			//btnMonitoramentoTransacoes.addMouseListener((MouseListener)new MouseAdapter() {
 					
-					public void mouseClicked(MouseEvent e) {
-						Transacoes trans = new Transacoes();
-						trans.setUndecorated(true);
-						trans.setVisible(true);
-						dispose();
+				//	public void mouseClicked(MouseEvent e) {
+				//		Transacoes trans = new Transacoes();
+				//		trans.setUndecorated(true);
+				//		trans.setVisible(true);
+				//		dispose();
 						
-					}
-				});
+				//	}
+			//	});
 				//btnRelatorio.addMouseListener((MouseListener)new MouseAdapter() {
 				
 				//public void mouseClicked(MouseEvent e) {

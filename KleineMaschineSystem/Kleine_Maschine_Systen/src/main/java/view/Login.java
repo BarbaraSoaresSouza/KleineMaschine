@@ -99,7 +99,7 @@ public class Login extends JFrame {
 			btnEntrar.addMouseListener((MouseListener) new MouseAdapter() {
 			 public void mouseClicked(MouseEvent e) {
 		        	 Maquina  maquina = new Maquina(); // TODO Auto-generated catch block
-					if(txtEmail.getText().equals("admin@agile.com") && txtSenha.getText().equals("123456789")){
+					if(txtEmail.getText().equals("gn@agile.com") && txtSenha.getText().equals("123456789")){
 					maquina.setUndecorated(true);	
                                             maquina.setVisible(true);  
 					}else {
